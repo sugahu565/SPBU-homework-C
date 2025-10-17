@@ -1,0 +1,40 @@
+#include "stack.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int brackToNums(char c)
+{
+    if (c == '(')
+	return 1;
+    if (c == '{')
+<------>return 2;
+    if (c == '[')
+<------>return 3;
+    if (c == ')')
+<------>return 4;
+    if (c == '}')
+<------>return 5;
+    if (c == ']')
+<------>return 6;
+}
+
+int main()
+{
+    char c;
+    printf("Write brackets: ");
+
+    c = getchar();
+    
+    stack brack;
+    init(&brack);
+    int answer = 1;
+
+    while (c != '\n') {
+	int nowNum = brackToNum(c);
+	if (nowNum < 4)
+	    push_back();
+	    
+    }
+    return 0;
+}
