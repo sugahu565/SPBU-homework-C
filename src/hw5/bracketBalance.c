@@ -7,15 +7,15 @@ int bracketToNum(char bracket)
     if (bracket == '(')
 	return 1;
     if (bracket == '[')
-<------>return 2;
+	return 2;
     if (bracket == '{')
-<------>return 3;
+	return 3;
     if (bracket == ')')
-<------>return 4;
+	return 4;
     if (bracket == ']')
-<------>return 5;
+	return 5;
     if (bracket == '}')
-<------>return 6;
+	return 6;
     return -1;
 }
 
@@ -35,12 +35,19 @@ int main()
 	    push(&s, num);
 	else {
 
-	    if (get(&) != num - 3)
+	    if (s.len == 0 || get(&s) != num - 3)
 		answer = 0;
 	    else
 		pop(&s);
 	}
+	
+	bracket = getchar();
     }
+
+    if (s.len > 0)
+	answer = 0;
+    
+    
     if (answer)
 	printf("Correct!");
     else
