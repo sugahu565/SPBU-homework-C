@@ -15,7 +15,7 @@ int get(stack* s)
     return *(s->last->p);
 }
 
-void push_back(stack* s, int x)
+void push(stack* s, int x)
 {
     elem_t* new = malloc(sizeof(elem_t));
     new->p = malloc(sizeof(int));
@@ -25,7 +25,7 @@ void push_back(stack* s, int x)
     s->len++;
 }
 
-int pop_back(stack* s)
+int pop(stack* s)
 {
     if (s->len == 0)
 	exit(EXIT_FAILURE);
@@ -40,5 +40,5 @@ int pop_back(stack* s)
 
 void destroy(stack* s) {
     while (s->len > 0)
-	pop_back(s);
+	pop(s);
 }

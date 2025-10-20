@@ -10,6 +10,6 @@ typedef struct {
 
 void init(stack* s);
 int get(stack* s);
-void push_back(stack* s, int x);
-int pop_back(stack* s);
+void push(stack* s, int x);
+int pop(stack* s);
 void destroy(stack* s);
