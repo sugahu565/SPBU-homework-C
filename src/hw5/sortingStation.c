@@ -7,6 +7,8 @@
 
 int opPriority(char c)
 {
+    if (c == '(')
+	return -1;
     if (c == '*' || c == '/')
 	return 1;
     return 0;
@@ -34,31 +36,32 @@ int tokenToNum(char c)
 
 char numToToken(int num)
 {
-    return "+-*/"[num];
+    return "+-*/("[num];
 }
 
-int read(char* input)
+int read(char** input)
 {
     int maxLen = 32, len = 0;
-    input = malloc(maxLen * sizeof(char));
+    *input = malloc(maxLen * sizeof(char));
 
-    if (input == NULL)
+    if (*input == NULL)
 	return -1;
 
     char curr = getchar();
 
     while (curr != '\n') {
-	if (n >= maxLen) {
+	if (len >= maxLen) {
 	    maxLen *= 2;
-	    char* temp = realloc(input, maxLen * sizeof(char));
+	    char* temp = realloc(*input, maxLen * sizeof(char));
 
 	    if (temp == NULL) {
-		free(input)
+		free(*input);
 		return -1;
 	    } else
-		input = temp;
+		*input = temp;
 	}
-	input[len++] = curr;
+	(*input)[len++] = curr;
+	curr = getchar();
     }
     return len;
 }
@@ -81,12 +84,12 @@ void sortingStat(stack s, char* input, int len)
 	    push(&s, tokenToNum(curr));
 	else if (curr == ')') {
 	    while (numToToken(get(&s)) != '(')
-		printf("%c ", pop(&s));
+		printf("%c ", numToToken(pop(&s)));
 	    pop(&s);
 	}
     }
     while (s.len > 0)
-	printf("%c ", pop(&s));
+	printf("%c ", numToToken(pop(&s)));
 }
 
 int main()
@@ -95,12 +98,11 @@ int main()
     init(&s);
 
     char* input;
-    int lenght = read(input);
+    int lenght = read(&input);
     if (input == NULL)
 	return -1;
 
-    for (int i = 0; i < lenght; ++i)
-	printf("%c", input[i]);
+    sortingStat(s, input, lenght);
 
     destroy(&s);
     free(input);
