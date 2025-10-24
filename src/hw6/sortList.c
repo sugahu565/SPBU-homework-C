@@ -10,7 +10,7 @@ void init(list* l)
 
 int push(list* l, int x)
 {
-    elem* new = malloc(sizeof(elem));
+    elem_t* new = malloc(sizeof(elem_t));
     if (new == NULL)
 	return -1;
 
@@ -35,7 +35,7 @@ int push(list* l, int x)
 	return 0;
     }
     // curr is a pointer to the max elem that is less than x
-    elem* curr = l->head;
+    elem_t* curr = l->head;
     while (curr->next != NULL && *(curr->next->p) < x)
 	curr = curr->next;
 
@@ -47,7 +47,7 @@ int push(list* l, int x)
 
 int pop(list* l, int x)
 {
-    elem* curr = l->head;
+    elem_t* curr = l->head;
     if (curr == NULL) {
 	return -1;
     }
@@ -62,7 +62,7 @@ int pop(list* l, int x)
 	curr = curr->next;
     if (*(curr->next->p) != x)
 	return -1;
-    elem* needToPop = curr->next;
+    elem_t* needToPop = curr->next;
     curr->next = curr->next->next;
     free(needToPop->p);
     free(needToPop);
@@ -72,7 +72,8 @@ int pop(list* l, int x)
 
 void destroy(list* l)
 {
-    elem* curr = l->head, nextElem;
+    elem_t* curr = l->head;
+    elem_t* nextElem;
     while (curr != NULL) {
 	nextElem = curr->next;
 	free(curr->p);

@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct elem_t {
+typedef struct elem {
     int* p;
-    struct elem_t* next;
-} elem;
+    struct elem* next;
+} elem_t;
 
-struct {
+typedef struct {
     int len;
-    elem* head;
+    elem_t* head;
 } list;
 
 void init(list* l);

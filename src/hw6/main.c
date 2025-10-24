@@ -4,9 +4,9 @@
 
 #define checkError(result) if (result == -1) printf("ERROR")
 
-void print(list l)
+void print(list* l)
 {
-    elem* curr = l->head;
+    elem_t* curr = l->head;
     while (curr != NULL) {
 	printf("%d ", *(curr->p));
 	curr = curr->next;
@@ -30,6 +30,7 @@ int main()
 	    checkError(pop(&l, x));
 	} else
 	    print(&l);
+	scanf("%d", &action);
     }
     destroy(&l);
     return 0;
