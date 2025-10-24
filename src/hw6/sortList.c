@@ -60,7 +60,7 @@ int pop(list* l, int x)
     }
     while (curr->next != NULL && *(curr->next->p) < x)
 	curr = curr->next;
-    if (*(curr->next->p) != x)
+    if (curr->next == NULL || *(curr->next->p) != x)
 	return -1;
     elem_t* needToPop = curr->next;
     curr->next = curr->next->next;
