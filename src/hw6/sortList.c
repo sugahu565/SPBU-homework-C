@@ -76,8 +76,6 @@ int getElem(list* l, int index)
     assert(index < l->len);
     elem_t* curr = l->head;
     int nowIndex = 0;
-    if (curr == NULL)
-        return -1;
     while (nowIndex < index) {
         curr = curr->next;
         nowIndex++;
