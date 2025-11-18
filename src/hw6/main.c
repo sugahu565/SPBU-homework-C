@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define checkError(result) \
-    if (result == -1)      \
-    printf("ERROR\n")
-
 void print(list* l)
 {
     elem_t* curr = l->head;
