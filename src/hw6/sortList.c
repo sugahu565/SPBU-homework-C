@@ -1,4 +1,5 @@
 #include "sortList.h"
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -68,6 +69,20 @@ int pop(list* l, int x)
     free(needToPop);
     l->len--;
     return 0;
+}
+
+int getElem(list* l, int index)
+{
+    assert(index < l->len);
+    elem_t* curr = l->head;
+    int nowIndex = 0;
+    if (curr == NULL)
+        return -1;
+    while (nowIndex < index) {
+        curr = curr->next;
+        nowIndex++;
+    }
+    return *(curr->p);
 }
 
 void destroy(list* l)

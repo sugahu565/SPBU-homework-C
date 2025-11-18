@@ -20,4 +20,5 @@ typedef struct {
 void init(list* l);
 int push(list* l, int x);
 int pop(list* l, int x);
+int getElem(list* l, int index);
 void destroy(list* l);
