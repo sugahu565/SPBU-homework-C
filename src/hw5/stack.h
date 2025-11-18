@@ -1,3 +1,5 @@
+#pragma once
+
 typedef struct elem {
     int* p;
     struct elem* prev;
