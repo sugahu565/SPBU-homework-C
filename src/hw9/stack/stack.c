@@ -11,7 +11,7 @@ void init(stack* s)
 int get(stack* s)
 {
     if (s->last == NULL)
-	exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     return *(s->last->p);
 }
 
@@ -28,7 +28,7 @@ void push(stack* s, int x)
 int pop(stack* s)
 {
     if (s->len == 0)
-	exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     int a = *(s->last->p);
     elem_t* topElem = s->last->prev;
     free(s->last->p);
@@ -38,7 +38,8 @@ int pop(stack* s)
     return a;
 }
 
-void destroy(stack* s) {
+void destroy(stack* s)
+{
     while (s->len > 0)
-	pop(s);
+        pop(s);
 }
