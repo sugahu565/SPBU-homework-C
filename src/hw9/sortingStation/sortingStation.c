@@ -89,7 +89,7 @@ void sortingStat(stack s, char* input, int len)
         printf("%c ", numToToken(pop(&s)));
 }
 
-int main()
+int main(void)
 {
     stack s;
     init(&s);

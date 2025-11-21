@@ -18,7 +18,7 @@ int bracketToNum(char bracket) {
   return -1;
 }
 
-int main() {
+int main(void) {
   stack s;
   init(&s);
 
