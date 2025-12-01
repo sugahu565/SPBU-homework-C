@@ -30,7 +30,6 @@ double findMant(Number a)
     int diff = 0;
     for (int i = 0; i < 6; ++i) {
         for (int j = 0; j < 8; ++j) {
-            int k = ((a.bin[i] >> j) & 1);
             mantissa += ((long long)((a.bin[i] >> j) & 1)) << diff;
             diff++;
         }
@@ -48,10 +47,6 @@ int main()
 
     printf("Write number: ");
     scanf("%lf", &(a.num));
-
-    int n = 1, littleEndian = 0;
-    if (*(char*)&n == 1)
-        littleEndian = 1;
 
     int sign = (a.bin[7] >> 7) & 1;
     int exp = findExpon(a);
