@@ -24,7 +24,7 @@ int main(void)
     stack s;
     init(&s);
 
-    char bracket = getchar();
+    char bracket = (char)getchar();
     int answer = 1;
 
     while (bracket != '\n') {
@@ -41,7 +41,7 @@ int main(void)
                 pop(&s);
         }
 
-        bracket = getchar();
+        bracket = (char)getchar();
     }
 
     if (s.len > 0)

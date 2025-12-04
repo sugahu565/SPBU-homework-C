@@ -1,6 +1,6 @@
-typedef struct elem {
+typedef struct Elem {
     int* p;
-    struct elem* prev;
+    struct Elem* prev;
 } elem_t;
 
 typedef struct {

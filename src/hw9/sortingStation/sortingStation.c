@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define isOperator(c) (c == '+' || c == '-' || c == '*' || c == '/')
-#define isNumber(c) ('0' <= c && c <= '9')
+#define isOperator(c) ((c) == '+' || (c) == '-' || (c) == '*' || (c) == '/')
+#define isNumber(c) ('0' <= (c) && (c) <= '9')
 
 int opPriority(char c)
 {
@@ -44,7 +44,7 @@ int read(char** input)
     if (*input == NULL)
         return -1;
 
-    char curr = getchar();
+    char curr = (char)getchar();
 
     while (curr != '\n') {
         if (len >= maxLen) {
@@ -58,12 +58,12 @@ int read(char** input)
                 *input = temp;
         }
         (*input)[len++] = curr;
-        curr = getchar();
+        curr = (char)getchar();
     }
     return len;
 }
 
-void sortingStat(stack s, char* input, int len)
+void sortingStat(stack s, const char* input, int len)
 {
     for (int i = 0; i < len; ++i) {
         char curr = input[i];
