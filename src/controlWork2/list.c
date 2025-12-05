@@ -34,6 +34,6 @@ void listPushHead(List* l, int val)
     newElem->next = l->head;
     l->head = newElem;
     if (l->len != 0)
-	l->head->prev = newElem;
+	newElem->next->prev = newElem;
     l->len++;
 }
