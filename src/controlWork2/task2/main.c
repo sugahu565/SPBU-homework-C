@@ -25,13 +25,34 @@ int getMax(unsigned int num)
     return maxNum;
 }
 
+int test1(void)
+{
+    unsigned int num = 1;
+    unsigned int expected = 2147483648;
+    return num == expected;
+}
+
+int test2(void)
+{
+    unsigned int num = 0;
+    unsigned int expected = 0;
+    return num == expected;
+}
+
+int test13(void)
+{
+    unsigned int num = 53;
+    unsigned int expected = 3556769792;
+    return num == expected;
+}
+
 int main(void)
 {
     unsigned int num;
     scanf("%d", &num);
 
     unsigned int maxNum = getMax(num);
-
+    printBin(num);
     printBin(maxNum);
     printf("%u\n", maxNum);
 
