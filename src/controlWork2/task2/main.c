@@ -52,9 +52,6 @@ int main(void)
     scanf("%d", &num);
 
     unsigned int maxNum = getMax(num);
-    printBin(num);
-    printBin(maxNum);
     printf("%u\n", maxNum);
-
     return 0;
 }
