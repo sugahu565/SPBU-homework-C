@@ -1,7 +1,7 @@
 #include "list.h"
-#include<stdio.h>
-#include<stdlib.h>
-#include<assert.h>
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define IS_NOT_NULL(a) assert((a) != NULL)
 
@@ -16,11 +16,10 @@ List* listInit(void)
 void listFree(List* l)
 {
     elem_t* curr = l->head;
-    while (curr != NULL)
-    {
-	elem_t* nextElem = curr-> next;
-	free(curr);
-	curr = nextElem;
+    while (curr != NULL) {
+        elem_t* nextElem = curr->next;
+        free(curr);
+        curr = nextElem;
     }
     free(l);
 }
@@ -34,6 +33,6 @@ void listPushHead(List* l, int val)
     newElem->next = l->head;
     l->head = newElem;
     if (l->len != 0)
-	newElem->next->prev = newElem;
+        newElem->next->prev = newElem;
     l->len++;
 }

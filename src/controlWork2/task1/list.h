@@ -1,12 +1,12 @@
 #pragma once
 
-typedef struct elem{
+typedef struct elem {
     int value;
     struct elem* next;
     struct elem* prev;
 } elem_t;
 
-typedef struct List{
+typedef struct List {
     elem_t* head;
     int len;
 } List;
