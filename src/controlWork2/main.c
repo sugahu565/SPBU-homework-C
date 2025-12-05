@@ -20,10 +20,45 @@ int isPalyndrome(List* l)
     return 1;
 }
 
-int testPalyndrome1(void)
+int testPalyndromeNotPalyndrom(void)
 {
-
+    int a[5] = {0, 1, 2, 3, 4};
+    List* l = listInit();
+    for (int i = 0; i < 5; ++i)
+	listPushHead(l, a[i]);
+    int result = isPalyndrome(l);
+    listFree(l);
+    return result == 0;
 }
+
+int testPalyndromeEmpty(void)
+{
+    List* l = listInit();
+    int result = isPalyndrome(l);
+    listFree(l);
+    return result;
+}
+
+int testPalyndromeOneElem(void)
+{
+    List* l = listInit();
+    listPushHead(l, 1);
+    int result = isPalyndrome(l);
+    listFree(l);
+    return result;
+}
+
+int testPalyndromeIsPalyndrome(void)
+{
+    int a[5] = {0, 1, 2, 1, 0};
+    List* l = listInit();
+    for (int i = 0; i < 5; ++i)
+	listPushHead(l, a[i]);
+    int result = isPalyndrome(l);
+    listFree(l);
+    return result;
+}
+
 
 int main(void)
 {
@@ -40,7 +75,6 @@ int main(void)
 	listPushHead(l, currNum);
 	end = (char)getchar();
     }
-    
 
     if (isPalyndrome(l))
 	printf("Palyndrome\n");
