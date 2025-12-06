@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void toBin(int dec, int* bin)
+int* toBin(int dec)
 {
     /*
     it would be possible to count bitwise, since the nums are bitwise in int
@@ -9,6 +9,7 @@ void toBin(int dec, int* bin)
     "translation into the binary system"
     */
     int i = 0;
+    int* bin = calloc(32, sizeof(int));
     if (dec < 0) {
         dec = -dec - 1;
         while (dec > 0) {
@@ -17,22 +18,25 @@ void toBin(int dec, int* bin)
         }
         for (int j = i; j < 32; ++j)
             bin[j] = 1;
-        return;
+        return bin;
     }
     while (dec > 0) {
         bin[i++] = dec % 2;
         dec /= 2;
     }
+    return bin;
 }
 
-void add(int* a, int* b, int* s)
+int* binAdd(int* a, int* b)
 {
     int k = 0;
+    int* s = calloc(32, sizeof(int));
     for (int i = 0; i < 32; ++i) {
         k = a[i] + b[i] + k;
         s[i] = k & 1;
         k >>= 1;
     }
+    return s;
 }
 
 void printBin(int* bin)
@@ -54,26 +58,4 @@ int toDec(int* bin)
     for (int i = 0; i < 31; ++i)
         dec += (bin[i] << i);
     return dec;
-}
-
-int main(void)
-{
-    int a, b;
-    scanf("%d %d", &a, &b);
-    int binA[32] = { 0 };
-    int binB[32] = { 0 };
-
-    toBin(a, binA);
-    toBin(b, binB);
-
-    int binS[32] = { 0 };
-    add(binA, binB, binS);
-
-    printBin(binA);
-    printBin(binB);
-    printBin(binS);
-
-    int s = toDec(binS);
-
-    printf("%d\n", s);
 }
