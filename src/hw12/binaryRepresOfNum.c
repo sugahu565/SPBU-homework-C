@@ -27,7 +27,7 @@ int* toBin(int dec)
     return bin;
 }
 
-int* binAdd(int* a, int* b)
+int* binAdd(const int* a, const int* b)
 {
     int k = 0;
     int* s = calloc(32, sizeof(int));
@@ -39,14 +39,14 @@ int* binAdd(int* a, int* b)
     return s;
 }
 
-void printBin(int* bin)
+void printBin(const int* bin)
 {
     for (int i = 31; i >= 0; --i)
         printf("%d", bin[i]);
     printf("\n");
 }
 
-int toDec(int* bin)
+int toDec(const int* bin)
 {
     int dec = 0;
     if (bin[31]) {
