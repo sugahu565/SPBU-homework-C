@@ -27,7 +27,7 @@ int* toBin(int dec)
     return bin;
 }
 
-int* binAdd(const int* a, const int* b)
+int* binSum(const int* a, const int* b)
 {
     int k = 0;
     int* s = calloc(32, sizeof(int));

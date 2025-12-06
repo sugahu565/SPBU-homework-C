@@ -9,7 +9,7 @@ int main(void)
     int* binA = toBin(a);
     int* binB = toBin(b);
 
-    int* binS = binAdd(binA, binB);
+    int* binS = binSum(binA, binB);
 
     printBin(binA);
     printBin(binB);
