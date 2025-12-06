@@ -8,7 +8,7 @@ void toBin(int dec, int* bin)
     but then I don't think that this can be considered a
     "translation into the binary system"
     */
-    int swap = 0, i = 0;
+    int i = 0;
     if (dec < 0) {
         dec = -dec - 1;
         while (dec > 0) {
@@ -37,16 +37,6 @@ void add(int* a, int* b, int* s)
 
 void printBin(int* bin)
 {
-    /*
-    without singificant zeros
-
-    int start = 0;
-    while (start > 0 && bin[start] == 0)
-        start--;
-    for (int i = start; i >= 0; --i)
-        printf("%d", bin[i]);
-    printf("\n");
-    */
     for (int i = 31; i >= 0; --i)
         printf("%d", bin[i]);
     printf("\n");
