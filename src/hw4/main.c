@@ -4,8 +4,8 @@
 
 int main()
 {
-    int* arr = malloc(100 * sizeof(int));
-    int* arrCopy = malloc(100 * sizeof(int));
+    int* arr[100];
+    int* arr[100];
     if (arr == NULL || arrCopy == NULL)
 	return -1;
     printf("Write an array (enter is the end): ");
