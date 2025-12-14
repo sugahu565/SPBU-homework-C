@@ -33,18 +33,17 @@ int main()
         if (num < 4)
             push(s, num);
         else {
-
-            if (s.len == 0 || peek(s) != num - 3)
+            if (s->len == 0 || peek(s) != num - 3) {
                 answer = 0;
                 break;
-            else
+            } else
                 pop(s);
         }
 
         bracket = getchar();
     }
 
-    if (s.len > 0)
+    if (s->len > 0)
         answer = 0;
 
     if (answer)
