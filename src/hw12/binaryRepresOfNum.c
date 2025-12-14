@@ -3,11 +3,6 @@
 
 int* toBin(int dec)
 {
-    /*
-    it would be possible to count bitwise, since the nums are bitwise in int
-    but then I don't think that this can be considered a
-    "translation into the binary system"
-    */
     int i = 0;
     int* bin = calloc(32, sizeof(int));
     if (dec < 0) {
