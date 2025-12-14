@@ -21,8 +21,7 @@ int bracketToNum(char bracket)
 
 int main()
 {
-    stack s;
-    init(&s);
+    stack* s = init();
 
     char bracket = getchar();
     int answer = 1;
@@ -35,7 +34,7 @@ int main()
             push(&s, num);
         else {
 
-            if (s.len == 0 || get(&s) != num - 3)
+            if (s.len == 0 || peek(&s) != num - 3)
                 answer = 0;
             else
                 pop(&s);
