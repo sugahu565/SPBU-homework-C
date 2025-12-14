@@ -2,10 +2,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void init(stack* s)
+stack* init(void)
 {
+    stack* s = malloc(sizeof(stack));
     s->len = 0;
     s->last = NULL;
+    return s;
 }
 
 int peek(stack* s)

@@ -10,7 +10,7 @@ typedef struct {
     elem_t* last;
 } stack;
 
-void init(stack* s);
+stack* init(void);
 int peek(stack* s);
 int push(stack* s, int x);
 int pop(stack* s);
