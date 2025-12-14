@@ -31,13 +31,14 @@ int main()
         int num = bracketToNum(bracket);
 
         if (num < 4)
-            push(&s, num);
+            push(s, num);
         else {
 
-            if (s.len == 0 || peek(&s) != num - 3)
+            if (s.len == 0 || peek(s) != num - 3)
                 answer = 0;
+                break;
             else
-                pop(&s);
+                pop(s);
         }
 
         bracket = getchar();
@@ -51,6 +52,6 @@ int main()
     else
         printf("Wrong!");
 
-    destroy(&s);
+    destroy(s);
     return 0;
 }
