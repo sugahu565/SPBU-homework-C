@@ -4,8 +4,8 @@
 
 int main()
 {
-    int* arr[100];
-    int* arrCopy[100];
+    int arr[100];
+    int arrCopy[100];
     if (arr == NULL || arrCopy == NULL)
         return -1;
     printf("Write an array (enter is the end): ");
@@ -32,7 +32,5 @@ int main()
         now++;
     }
     printf("\n");
-    free(arr);
-    free(arrCopy);
     return changePositions;
 }
