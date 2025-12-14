@@ -8,30 +8,33 @@ void init(stack* s)
     s->last = NULL;
 }
 
-int get(stack* s)
+int peek(stack* s)
 {
     if (s->last == NULL)
         exit(EXIT_FAILURE);
-    return *(s->last->p);
+    return s->last->p;
 }
 
-void push(stack* s, int x)
+int push(stack* s, int x)
 {
     elem_t* new = malloc(sizeof(elem_t));
-    new->p = malloc(sizeof(int));
-    *(new->p) = x;
+
+    if (new == NULL)
+        return -1;
+
+    new->p = x;
     new->prev = s->last;
     s->last = new;
     s->len++;
+    return 0;
 }
 
 int pop(stack* s)
 {
     if (s->len == 0)
         exit(EXIT_FAILURE);
-    int a = *(s->last->p);
+    int a = s->last->p;
     elem_t* topElem = s->last->prev;
-    free(s->last->p);
     free(s->last);
     s->last = topElem;
     s->len--;
