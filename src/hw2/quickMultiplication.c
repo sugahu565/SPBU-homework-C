@@ -5,7 +5,7 @@ int main(void)
 {
     float x;
     scanf("%f", &x);
-    const float x2 = x * x;
-    printf("%f", (x2 + 1) * (x2 + x) + 1);
+    const float X2 = x * x;
+    printf("%f", (X2 + 1) * (X2 + x) + 1);
     return 0;
 }
