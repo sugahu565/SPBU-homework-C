@@ -35,6 +35,8 @@ void pop(cycleList* l, elem_t* prevElem)
 {
     // delete elem after prevElem;
     l->len--;
+    if (prevElem == NULL)
+        return;
     if (prevElem->next == prevElem) {
         free(prevElem->p);
         free(prevElem);
