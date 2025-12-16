@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define checkError(result) \
-    if ((result) == -1)      \
+    if ((result) == -1)    \
     printf("ERROR\n")
 
 typedef struct Elem {
