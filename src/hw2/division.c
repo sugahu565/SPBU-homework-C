@@ -33,7 +33,7 @@ int main(void)
     k -= 1;
 
     if (signA > 0)
-        printf("%d\n", k);
+        printf("%d\n", signB * k);
     else
         printf("%d\n", -signB * (k + (a > 0)));
     return 0;
