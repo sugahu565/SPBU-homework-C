@@ -66,7 +66,7 @@ int equalBin(const int* a, const int* b)
     return 1;
 }
 
-int testToBin()
+int testToBin(void)
 {
     printf("==========Start testing toBin==========\n");
     int passed = 0;
@@ -81,7 +81,7 @@ int testToBin()
     return passed;
 }
 
-int testToDec()
+int testToDec(void)
 {
     printf("==========Start testing toDec==========\n");
     int passed = 0;
@@ -93,7 +93,7 @@ int testToDec()
     return passed;
 }
 
-int testBinSum()
+int testBinSum(void)
 {
     printf("==========Start testing binSum==========\n");
     int passed = 0;
