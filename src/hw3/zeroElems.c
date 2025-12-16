@@ -14,7 +14,7 @@ int* getArr(int* len)
     int currLen = 1;
 
     char c;
-    while ((c = getchar()) != '\n' && c != EOF) {
+    while ((c = (char)getchar()) != '\n' && c != EOF) {
         int newElem;
         scanf("%d", &newElem);
         if (currLen == lenArr) {

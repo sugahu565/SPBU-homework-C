@@ -8,7 +8,7 @@ int main(void)
 
     int openBracket = 0;
 
-    nowSymb = getchar();
+    nowSymb = (char)getchar();
     while (nowSymb != '\n') {
         if (nowSymb == '(')
             ++openBracket;
@@ -19,7 +19,7 @@ int main(void)
             printf("Wrong!\n");
             return 0;
         }
-        nowSymb = getchar();
+        nowSymb = (char)getchar();
     }
     if (!openBracket)
         printf("Right!\n");
