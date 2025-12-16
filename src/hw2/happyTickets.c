@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
     int a[28] = { 0 };
     for (int i = 0; i < 10; ++i) {
