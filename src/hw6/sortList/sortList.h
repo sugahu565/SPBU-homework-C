@@ -4,12 +4,12 @@
 #include <stdlib.h>
 
 #define checkError(result) \
-    if (result == -1)      \
+    if ((result) == -1)    \
     printf("ERROR\n")
 
-typedef struct elem {
+typedef struct Elem {
     int* p;
-    struct elem* next;
+    struct Elem* next;
 } elem_t;
 
 typedef struct {

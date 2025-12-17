@@ -12,7 +12,7 @@ void print(list* l)
     printf("\n");
 }
 
-int main()
+int main(void)
 {
     list l;
     init(&l);

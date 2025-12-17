@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct elem {
+typedef struct Elem {
     int* p;
-    struct elem* next;
+    struct Elem* next;
 } elem_t;
 
 typedef struct {
