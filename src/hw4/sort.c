@@ -1,12 +1,17 @@
 #define MAX_SIZE 100
 int a[MAX_SIZE];
 
+// NOLINTNEXTLINE(misc-no-recursion)
 void sort(int* startArr, int* endArr)
 {
     if (startArr + 1 >= endArr)
         return;
 
-    int diff = (endArr - startArr) / 2;
+    long long diff = (endArr - startArr) / 2;
+
+    if (diff < 0)
+        return;
+
     int* mid = startArr + diff;
 
     sort(startArr, mid);
