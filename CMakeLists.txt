@@ -10,8 +10,10 @@ add_compile_options(
     "$<$<COMPILE_LANGUAGE:C>:-Wpedantic>"
 )
 
-set(CMAKE_ASM_FLAGS "")
-
+set_source_files_properties(sort.s PROPERTIES
+    LANGUAGE ASM
+    COMPILE_OPTIONS ""
+)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
